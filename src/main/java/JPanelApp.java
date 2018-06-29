@@ -4,12 +4,11 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import static javax.swing.JFrame.EXIT_ON_CLOSE;
+
 public class JPanelApp extends JPanel{
 
-    static JTextField skilsText = null;
-    static JTextField salaryTextTo = null;
-    static JTextField salaryTextFrom = null;
-    static JTextField countSearch = null;
+    public static JFrame jFrame = new JFrame();
     static String TextSkils;
     static int flag = 0;
     static int N = 0;
@@ -98,6 +97,7 @@ public class JPanelApp extends JPanel{
         search.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 try {
+                    JPanel panelResume =new JPanelAppResume();
                     if (skilsRB1.isSelected()) flag =1;
                     if (skilsRB2.isSelected()) flag =2;
                     if (skilsRB3.isSelected()) flag =3;
@@ -106,14 +106,23 @@ public class JPanelApp extends JPanel{
                     to = salaryTextTo.getText();
                     TextSkils = skilsText.getText();
                     N = Integer.parseInt(showText.getText());
+                    jFrame.setBounds(400,30,500,600);
+                    jFrame.setTitle("Результаты поиска");
+                    jFrame.setDefaultCloseOperation(EXIT_ON_CLOSE);
+                    jFrame.add(JPanelAppResume.panelResume);
+                    jFrame.setResizable(false);
                     SearchBase.searchData();
+                    jFrame.setVisible(true);
+
                 } catch (InterruptedException e1) {
                     e1.printStackTrace();
                 }
             }
         });
 
-
+      // final Panel labPanel = new Panel();
+       // final JScrollPane scrollPane = new JScrollPane(labPanel);
+       //labPanel.setLayout(new BoxLayout(labPanel, BoxLayout.Y_AXIS));
 
     }
 

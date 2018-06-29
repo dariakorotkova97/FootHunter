@@ -1,14 +1,16 @@
 import javax.swing.*;
 
 public class JFrameApp extends JFrame{
-    public JFrameApp(){
 
-        setBounds(400,30,500,600);
-        setTitle("HeadHunter");
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        add(new JPanelApp());
-        setVisible(true);
-        setResizable(false);
+    public static JFrame frame = new JFrame();
+
+    public JFrameApp(){
+        frame.setBounds(400,30,500,600);
+        frame.setTitle("HeadHunter");
+        frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        frame.add(new JPanelApp());
+        frame.setVisible(true);
+        frame.setResizable(false);
     }
 }
 
