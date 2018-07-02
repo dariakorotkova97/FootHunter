@@ -1,9 +1,10 @@
-public class MainApp {
+
+import interface_.InterfaceSearchFrame;
+
+public class MainApp{
 
     public static void main(String[] args){
-
-        new JFrameApp();
+        new InterfaceSearchFrame();
     }
-
 
 }
