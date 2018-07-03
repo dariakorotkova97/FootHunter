@@ -1,7 +1,6 @@
 package pages;
 
-import database.DataBase;
-import interface_.InterfaceResultPanel;
+import interfaces.InterfaceResultPanel;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;

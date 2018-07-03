@@ -1,6 +1,6 @@
 package database;
 
-import interface_.InterfaceSearchPanel;
+import interfaces.InterfaceSearchPanel;
 import pages.HHResultResumePage;
 
 import javax.swing.*;
@@ -37,22 +37,19 @@ public class DataBase {
         }
 
     }
-    /*public static void createDataBase(){
+    public static void createDataBase(){
         System.out.println("Создание таблицы..");
         try{
-            Statement st = connection.createStatement();
-            String createSQL = "create table hhdatabase (" +
-                    " id integer NOT NULL," +
-                    "  \"position\" text NOT NULL," +
-                    "  link text NOT NULL," +
-                    "  id_hh text NOT NULL," +
-                    "  CONSTRAINT hhbase1_pkey PRIMARY KEY (id))";
-            st.execute(createSQL);
+            statement = connection.createStatement();
+            statement.execute("CREATE TABLE IF NOT EXISTS hhbase1(id integer NOT NULL," +
+                    " position text NOT NULL," +
+                    " link text NOT NULL, hh_id text NOT NULL," +
+                    "CONSTRAINT hhbase1_pkey PRIMARY KEY (id));");
             System.out.println("Таблица создана..");
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    }*/
+    }
 
     public static void insertDataBase() {
         try {
