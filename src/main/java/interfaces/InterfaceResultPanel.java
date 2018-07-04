@@ -14,9 +14,9 @@ public class InterfaceResultPanel extends JPanel {
     public static JPanel panelResume = new JPanel();
 
     public InterfaceResultPanel(){
+        panelResume.setLayout(null);
         JButton buttonSave;
         JButton buttonShowAll;
-        panelResume.setLayout(null);
         panelResume.setBounds(50, 50, 400,500);
         JLabel title = new JLabel("Список подходящих резюме");
         title.setBounds(180,30, 300, 30);

@@ -28,7 +28,7 @@ public class InterfaceSearchPanel extends JPanel{
         title.setFont(new Font("Serif",Font.BOLD,30));
         add(title);
 
-        final JLabel skilsLabel = new JLabel("Должность");
+        final JLabel skilsLabel = new JLabel("Ключевые слова");
         skilsLabel.setBounds(50,127, 200, 30);
         skilsLabel.setFont(new Font("Serif",Font.PLAIN,20));
         add(skilsLabel);
@@ -139,15 +139,16 @@ public class InterfaceSearchPanel extends JPanel{
                         getErrorMassage("<html>Наша программа выводит<br> не более 15 резюме!</br>");
                         return;
                     }
+                    JPanel panelResume =new InterfaceResultPanel();
                     resultFrame.setBounds(200,30,670,630);
                     resultFrame.setTitle("Результаты поиска");
                     resultFrame.setDefaultCloseOperation(EXIT_ON_CLOSE);
-                    resultFrame.add(new InterfaceResultPanel());
+                    resultFrame.add(InterfaceResultPanel.panelResume);
                     resultFrame.setResizable(false);
-                    DataBase.connectDateBase();
-                    DataBase.createDataBase();
                     LogicSelenium.findResume();
                     resultFrame.setVisible(true);
+                    DataBase.connectDateBase();
+                    DataBase.createDataBase();
 
                 } catch (InterruptedException e1) {
                     e1.printStackTrace();
